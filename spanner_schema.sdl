@@ -1,0 +1,10 @@
+CREATE TABLE Latest (
+  Key STRING(1024) NOT NULL,
+  Value BYTES(MAX) NOT NULL,
+) PRIMARY KEY(Key);
+
+CREATE TABLE Snapshots (
+  Key STRING(1024) NOT NULL,
+  Timestamp TIMESTAMP NOT NULL,
+  Value BYTES(MAX) NOT NULL,
+) PRIMARY KEY(Key, Timestamp);
