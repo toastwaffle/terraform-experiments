@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "fivebit.co.uk/terraform/proto/dataplane_go_proto";
+
+package terraform.proto;
+
+service DataPlane {
+  rpc Set(SetRequest) returns (SetResponse) {}
+  rpc Get(GetRequest) returns (GetResponse) {}
+}
+
+message SetRequest {
+  string key = 1;
+  bytes value = 2;
+}
+
+message SetResponse {
+  int64 commit_timestamp_secs = 1;
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetResponse {
+  bytes value = 1;
+}
