@@ -2,6 +2,8 @@ syntax = "proto3";
 
 option go_package = "fivebit.co.uk/terraform/proto/dataplane_go_proto";
 
+import "google/protobuf/timestamp.proto";
+
 package terraform.proto;
 
 service DataPlane {
@@ -15,7 +17,7 @@ message SetRequest {
 }
 
 message SetResponse {
-  int64 commit_timestamp_secs = 1;
+  google.protobuf.Timestamp commit_timestamp = 1;
 }
 
 message GetRequest {

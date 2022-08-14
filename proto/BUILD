@@ -8,6 +8,7 @@ package(
 proto_library(
     name = "dataplane_proto",
     srcs = ["dataplane.proto"],
+    deps = ["@com_google_protobuf//:timestamp_proto"],
 )
 
 go_proto_library(
